@@ -1,0 +1,30 @@
+baseURL = "https://automotivefavorites.com/"
+languageCode = "id-ID"
+title = "Automotive Favorites - Info Otomotif Terlengkap"
+theme = ""
+
+[params]
+  description = "Portal informasi otomotif terlengkap di Indonesia"
+  author = "Automotive Favorites Team"
+  logo = "/images/logo.png"
+  
+[menu]
+  [[menu.main]]
+    name = "Beranda"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "Artikel"
+    url = "/posts/"
+    weight = 2
+    
+  [[menu.main]]
+    name = "Tentang Kami"
+    url = "/about/"
+    weight = 3
+    
+  [[menu.main]]
+    name = "Kontak"
+    url = "/contact/"
+    weight = 4

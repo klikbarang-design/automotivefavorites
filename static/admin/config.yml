@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: username/automotivefavorites # Ganti dengan repo Anda
+  branch: main
+  
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # Blog Posts
+  - name: "posts"
+    label: "Artikel Blog"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Tanggal Publish", name: "date", widget: "datetime"}
+      - {label: "Gambar Utama", name: "image", widget: "image"}
+      - {label: "Kategori", name: "categories", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Excerpt", name: "description", widget: "text"}
+      - {label: "Konten", name: "body", widget: "markdown"}
+      
+  # Pages
+  - name: "pages"
+    label: "Halaman"
+    files:
+      - label: "Tentang Kami"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - {label: "Judul", name: "title", widget: "string"}
+          - {label: "Konten", name: "body", widget: "markdown"}
+          
+      - label: "Kontak"
+        name: "contact"
+        file: "content/contact.md"
+        fields:
+          - {label: "Judul", name: "title", widget: "string"}
+          - {label: "Konten", name: "body", widget: "markdown"}
+          
+  # Template Settings
+  - name: "settings"
+    label: "Pengaturan"
+    files:
+      - label: "Konfigurasi Umum"
+        name: "general"
+        file: "data/settings.json"
+        fields:
+          - {label: "Nama Situs", name: "site_name", widget: "string"}
+          - {label: "Deskripsi", name: "description", widget: "text"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Telepon", name: "phone", widget: "string"}

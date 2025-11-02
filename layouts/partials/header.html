@@ -1,0 +1,31 @@
+<header class="site-header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">
+                    <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+                    <span>{{ .Site.Title }}</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                {{ range .Site.Menus.main }}
+                <li class="nav-item">
+                    <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+            
+            <div class="search-box">
+                <input type="search" placeholder="Cari artikel...">
+                <button type="submit">🔍</button>
+            </div>
+        </div>
+    </nav>
+</header>

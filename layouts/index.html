@@ -1,0 +1,68 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="container">
+        <h1>Selamat Datang di Automotive Favorites</h1>
+        <p>Portal Informasi Otomotif Terlengkap di Indonesia</p>
+        <a href="/posts/" class="btn-primary">Jelajahi Artikel</a>
+    </div>
+</section>
+
+<section class="featured-posts">
+    <div class="container">
+        <h2>Artikel Terbaru</h2>
+        <div class="posts-grid">
+            {{ range first 6 (where .Site.RegularPages "Type" "posts") }}
+            <article class="post-card">
+                {{ if .Params.image }}
+                <div class="post-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                </div>
+                {{ end }}
+                
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="date">{{ .Date.Format "2 January 2006" }}</span>
+                        {{ if .Params.categories }}
+                        <span class="category">{{ index .Params.categories 0 }}</span>
+                        {{ end }}
+                    </div>
+                    
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Description | default .Summary }}</p>
+                    
+                    <a href="{{ .Permalink }}" class="read-more">Baca Selengkapnya →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="categories-section">
+    <div class="container">
+        <h2>Kategori Populer</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <span class="icon">🚗</span>
+                <h3>Mobil</h3>
+                <p>Review dan berita mobil terbaru</p>
+            </div>
+            <div class="category-card">
+                <span class="icon">🏍️</span>
+                <h3>Motor</h3>
+                <p>Info motor dan sepeda motor</p>
+            </div>
+            <div class="category-card">
+                <span class="icon">🔧</span>
+                <h3>Tips & Trik</h3>
+                <p>Panduan perawatan kendaraan</p>
+            </div>
+            <div class="category-card">
+                <span class="icon">⭐</span>
+                <h3>Review</h3>
+                <p>Review produk otomotif</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

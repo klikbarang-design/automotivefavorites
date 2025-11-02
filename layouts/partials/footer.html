@@ -1,0 +1,43 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Tentang Kami</h3>
+                <p>{{ .Site.Params.description }}</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Link Cepat</h3>
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Kategori</h3>
+                <ul>
+                    <li><a href="/categories/mobil">Mobil</a></li>
+                    <li><a href="/categories/motor">Motor</a></li>
+                    <li><a href="/categories/tips">Tips</a></li>
+                    <li><a href="/categories/review">Review</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
